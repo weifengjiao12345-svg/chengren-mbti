@@ -114,6 +114,9 @@ a{text-decoration:none;color:inherit}
 .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
 .tag{padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;background:rgba(255,255,255,.08);color:var(--blue);border:1px solid rgba(0,191,255,.25)}
 
+/* 人格图片 */
+.persona-img{width:100%;max-width:320px;border-radius:20px;margin:0 auto 20px;display:block;box-shadow:0 8px 32px rgba(0,0,0,.4)}
+
 /* 雷达图 */
 .radar-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:20px;margin-bottom:20px;display:flex;flex-direction:column;align-items:center}
 .radar-card canvas{width:220px;height:220px}
@@ -193,6 +196,8 @@ a{text-decoration:none;color:inherit}
     <div class="res-persona" id="rPersona"></div>
     <div class="res-analysis" id="rAnalysis"></div>
     <div class="tag-row" id="rTags"></div>
+
+    <img class="persona-img" id="rImg" src="" alt="" style="display:none">
 
     <div class="radar-card">
       <canvas id="radarCanvas" width="220" height="220"></canvas>
@@ -274,6 +279,10 @@ function showResult(){
   document.getElementById('rProduct').textContent = p.product;
   document.getElementById('rLink').href = p.link;
   document.getElementById('rTags').innerHTML = p.tags.map(t=>`<span class="tag">#${t}</span>`).join('');
+
+  // 显示人格图片
+  const imgEl = document.getElementById('rImg');
+  if(p.image){ imgEl.src=p.image; imgEl.style.display='block'; } else { imgEl.style.display='none'; }
 
   show('result');
   setTimeout(()=>drawRadar(p.radar, p.color), 100);
