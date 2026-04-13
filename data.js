@@ -119,12 +119,12 @@ const QUESTIONS = [
 
 // ============================================================
 // 人格数据 - 16种类型
-// persona: 人设标签   analysis: 分析文案   product: 商品文案
-// link: 商品链接（替换为你的实际链接）
-// tags: 结果页展示的关键词
+// image: 人格图片链接（对应仓库中的 PNG 文件）
 // radar: 四个维度的分值（0~1），用于雷达图展示
 //   [上头, 理性, 感官, 灵魂]
 // ============================================================
+const IMG_BASE = 'https://weifengjiao12345-svg.github.io/chengren-mbti';
+
 const PERSONALITIES = {
   INTJ: {
     persona: '战略型闷骚',
@@ -132,7 +132,7 @@ const PERSONALITIES = {
     product: '金属的冰冷，准确的操作，惹火的氛围',
     link: 'https://item.jd.com/10160781623061.html',
     tags: ['精准', '冷感', '高效'],
-    image: 'https://weifengjiao12345-svg.github.io/chengren-mbti/INTJ.png',
+    image: IMG_BASE + '/INTJ.png',
     radar: [0.3, 0.9, 0.5, 0.7],
     color: '#6C63FF'
   },
@@ -142,6 +142,7 @@ const PERSONALITIES = {
     product: 'AI影音识别大模型+突破视界影音随动+尺寸自适应通道，精准手游快感',
     link: 'https://item.jd.com/100245029815.html',
     tags: ['脑补王', '懒得动', '研究员'],
+    image: IMG_BASE + '/INTP.png',
     radar: [0.2, 0.95, 0.3, 0.8],
     color: '#5B8FF9'
   },
@@ -151,6 +152,7 @@ const PERSONALITIES = {
     product: '时间不是问题，腰力久经考验',
     link: 'https://item.jd.com/100278426962.html',
     tags: ['掌控欲', '高效率', '不服来战'],
+    image: IMG_BASE + '/ENTJ.png',
     radar: [0.6, 0.9, 0.7, 0.5],
     color: '#FF4D4F'
   },
@@ -160,6 +162,7 @@ const PERSONALITIES = {
     product: '最能说话的ta，此刻静音',
     link: 'https://item.jd.com/100113137431.html',
     tags: ['嘴强王者', '花样多', '防腻专家'],
+    image: IMG_BASE + '/ENTP.png',
     radar: [0.7, 0.8, 0.6, 0.7],
     color: '#FA8C16'
   },
@@ -169,6 +172,7 @@ const PERSONALITIES = {
     product: '傲娇猫娘，考验耐力的交付',
     link: 'https://detail.tmall.com/item.htm?id=733386891054',
     tags: ['傲娇', '灵魂共鸣', '神秘感'],
+    image: IMG_BASE + '/INFJ.png',
     radar: [0.5, 0.6, 0.4, 0.95],
     color: '#722ED1'
   },
@@ -178,6 +182,7 @@ const PERSONALITIES = {
     product: '怎么不是一种奖励呢？',
     link: 'https://item.jd.com/100153303919.html',
     tags: ['纯爱脑', '情绪化', '月亮心情'],
+    image: IMG_BASE + '/INFP.png',
     radar: [0.8, 0.2, 0.3, 0.95],
     color: '#EB2F96'
   },
@@ -187,6 +192,7 @@ const PERSONALITIES = {
     product: '重组胶原蛋白×玻尿酸，医用级别，呵护每一寸感受',
     link: 'https://item.jd.com/100261990364.html',
     tags: ['温柔过头', '全员照顾', '教育系'],
+    image: IMG_BASE + '/ENFJ.png',
     radar: [0.9, 0.5, 0.6, 0.8],
     color: '#13C2C2'
   },
@@ -196,6 +202,7 @@ const PERSONALITIES = {
     product: '新鲜感永动机，今天也要解锁新玩法',
     link: 'https://item.jd.com/100329216956.html',
     tags: ['新鲜感', '扑倒型', '拆家达人'],
+    image: IMG_BASE + '/ENFP.png',
     radar: [0.95, 0.3, 0.8, 0.7],
     color: '#FF69B4'
   },
@@ -205,6 +212,7 @@ const PERSONALITIES = {
     product: '安全系数✅ 水感润滑✅ 防脱落微米附着专利✅ 亲密安全流程✅',
     link: 'https://item.jd.com/10147795248211.html',
     tags: ['按流程', '排班表', '拒绝意外'],
+    image: IMG_BASE + '/ISTJ.png',
     radar: [0.2, 0.9, 0.6, 0.3],
     color: '#52C41A'
   },
@@ -214,6 +222,7 @@ const PERSONALITIES = {
     product: '医用同源，低敏超薄，水润柔滑',
     link: 'https://item.jd.com/100324457638.html',
     tags: ['无限付出', '低调照顾', '别太野'],
+    image: IMG_BASE + '/ISFJ.png',
     radar: [0.4, 0.5, 0.7, 0.6],
     color: '#A0D911'
   },
@@ -223,6 +232,7 @@ const PERSONALITIES = {
     product: '爱可以谈，但不能高危，懂安全才能do',
     link: 'https://item.jd.com/100041522385.html',
     tags: ['先签字', '合规操作', '年终奖'],
+    image: IMG_BASE + '/ESTJ.png',
     radar: [0.3, 0.95, 0.7, 0.2],
     color: '#1890FF'
   },
@@ -232,6 +242,7 @@ const PERSONALITIES = {
     product: '我要验牌，亲密的牌，他的她的都能玩，认可感最重要',
     link: 'https://item.jd.com/100027019937.html',
     tags: ['秀恩爱', '求好评', '五星服务'],
+    image: IMG_BASE + '/ESFJ.png',
     radar: [0.8, 0.4, 0.8, 0.6],
     color: '#FF85C2'
   },
@@ -241,6 +252,7 @@ const PERSONALITIES = {
     product: '开车得有润滑液，一滴润滑车速升级',
     link: 'https://item.jd.com/2388387.html',
     tags: ['直接来', '少废话', '动手派'],
+    image: IMG_BASE + '/ISTP.png',
     radar: [0.3, 0.7, 0.9, 0.3],
     color: '#8C8C8C'
   },
@@ -250,6 +262,7 @@ const PERSONALITIES = {
     product: '香气如镜，照见欲望的彼此，美的当下',
     link: 'https://item.jd.com/10154484489875.html',
     tags: ['美学至上', '香薰控', '角度党'],
+    image: IMG_BASE + '/ISFP.png',
     radar: [0.6, 0.3, 0.95, 0.7],
     color: '#FF7A45'
   },
@@ -259,6 +272,7 @@ const PERSONALITIES = {
     product: '出街小神器，无人知晓的超快乐',
     link: 'https://item.jd.com/100105588045.html',
     tags: ['撩完就跑', '蹦极式', '刺激优先'],
+    image: IMG_BASE + '/ESTP.png',
     radar: [0.9, 0.5, 0.95, 0.3],
     color: '#F5222D'
   },
@@ -268,6 +282,7 @@ const PERSONALITIES = {
     product: '爱就是一场永不散场的after party，可以加入两人对战的玩具，让一起更一起',
     link: 'https://item.jd.com/100329216956.html',
     tags: ['全场最嗨', 'after party', '一起更一起'],
+    image: IMG_BASE + '/ESFP.png',
     radar: [0.95, 0.2, 0.9, 0.5],
     color: '#FADB14'
   }
