@@ -132,6 +132,7 @@ const PERSONALITIES = {
     product: '金属的冰冷，准确的操作，惹火的氛围',
     link: 'https://item.jd.com/10160781623061.html',
     tags: ['精准', '冷感', '高效'],
+    image: 'https://weifengjiao12345-svg.github.io/chengren-mbti/INTJ.png',
     radar: [0.3, 0.9, 0.5, 0.7],
     color: '#6C63FF'
   },
