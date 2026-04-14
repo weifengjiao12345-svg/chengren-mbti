@@ -69,6 +69,8 @@ a{text-decoration:none;color:inherit}
 @keyframes shine{0%{left:-100%}100%{left:160%}}
 .hot-tip{margin-top:24px;padding:10px 18px;background:rgba(255,255,255,.08);border-radius:20px;font-size:13px;color:var(--muted)}
 .hot-tip em{color:var(--blue);font-style:normal;font-weight:600}
+.home-from{font-size:12px;color:rgba(255,255,255,.4);letter-spacing:1px;margin-bottom:20px;text-transform:uppercase}
+.home-from-note{font-size:12px;color:rgba(255,255,255,.3);margin-top:20px}
 .stat-row{display:flex;gap:24px;margin-top:36px}
 .stat-item{text-align:center}
 .stat-num{font-size:22px;font-weight:800;background:linear-gradient(135deg,var(--pink),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -103,6 +105,7 @@ a{text-decoration:none;color:inherit}
 .opt:active{transform:scale(.98)}
 .opt.selected{background:linear-gradient(135deg,rgba(255,105,180,.2),rgba(218,112,214,.2));border-color:var(--pink)}
 .opt.selected::before{content:'✓';position:absolute;right:16px;top:50%;transform:translateY(-50%);color:var(--pink);font-size:16px;font-weight:700}
+.quiz-tip{text-align:center;font-size:11px;color:rgba(255,255,255,.25);margin-top:28px;letter-spacing:.5px}
 
 /* ══════════════════════════════
    结果页
@@ -132,8 +135,17 @@ a{text-decoration:none;color:inherit}
   border-radius:20px;padding:20px;margin-bottom:16px
 }
 .product-label{font-size:11px;color:var(--muted);letter-spacing:.5px;margin-bottom:8px;text-transform:uppercase}
-.product-text{font-size:14px;line-height:1.7;color:rgba(255,255,255,.85);margin-bottom:16px}
+.product-type-tip{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:10px}
 .product-btn{
+  display:block;width:100%;padding:15px 0;text-align:center;
+  border-radius:50px;font-size:15px;font-weight:700;color:#fff;
+  background:linear-gradient(135deg,var(--pink),var(--purple));
+  box-shadow:0 6px 24px rgba(255,105,180,.35);
+  transition:transform .15s
+}
+.product-btn:active{transform:scale(.97)}
+.smzdm-tag{font-size:11px;color:rgba(255,255,255,.3);text-align:center;margin-top:10px}
+.product-text{font-size:14px;line-height:1.7;color:rgba(255,255,255,.85);margin-bottom:16px}
   display:block;width:100%;padding:15px 0;text-align:center;
   border-radius:50px;font-size:15px;font-weight:700;color:#fff;
   background:linear-gradient(135deg,var(--pink),var(--purple));
@@ -172,11 +184,13 @@ a{text-decoration:none;color:inherit}
 <div id="home" class="page active">
   <div class="wrap">
     <div class="home-inner">
+      <div class="home-from">🎁 什么值得买 · 出品</div>
       <div class="logo-box">🎭</div>
       <h1 class="home-title">情欲人格图鉴</h1>
       <p class="home-sub">测测你的关系潜台词<br>看看你是哪种"成年人"</p>
       <button class="cta" onclick="startQuiz()">开始匹配你的关系人格</button>
       <div class="hot-tip">🔥 本周热门人格：<em>ENFP 快乐小狗</em></div>
+      <div class="home-from-note">本测试由 什么值得买 与你共同开启</div>
       <div class="stat-row">
         <div class="stat-item"><div class="stat-num">16</div><div class="stat-label">种人格</div></div>
         <div class="stat-item"><div class="stat-num">12</div><div class="stat-label">道题目</div></div>
@@ -197,6 +211,7 @@ a{text-decoration:none;color:inherit}
     <div class="q-num" id="qNum">Q01</div>
     <div class="q-text" id="qText"></div>
     <div class="options" id="opts"></div>
+    <div class="quiz-tip">发现好物 · 上什么值得买 ↓</div>
   </div>
 </div>
 
@@ -216,13 +231,10 @@ a{text-decoration:none;color:inherit}
 
     <div class="product-card">
       <div class="product-label">🛍️ 为你推荐</div>
+      <div class="product-type-tip" id="rTypeTip"></div>
       <div class="product-text" id="rProduct"></div>
-      <a class="product-btn" id="rLink" href="#" target="_blank" rel="noopener">立即查看 →</a>
-    </div>
-
-    <div class="brand-row">
-      <img class="brand-logo" src="share-cover.png" alt="值" onerror="this.style.display='none'">
-      <span class="brand-text">好物严选 · <strong>什么值得买</strong></span>
+      <a class="product-btn" id="rLink" href="#" target="_blank" rel="noopener">去什么值得买 App 搜同款好价 →</a>
+      <div class="smzdm-tag">好价实时监控 · 什么值得买</div>
     </div>
 
     <div class="share-row">
@@ -295,6 +307,7 @@ function showResult(){
   document.getElementById('rProduct').textContent = p.product;
   document.getElementById('rLink').href = p.link;
   document.getElementById('rTags').innerHTML = p.tags.map(t=>`<span class="tag">#${t}</span>`).join('');
+  document.getElementById('rTypeTip').textContent = p.typeTip || '';
 
   // 显示人格图片
   const imgEl = document.getElementById('rImg');
@@ -374,7 +387,7 @@ function copyResult(){
   const type = document.getElementById('rType').textContent;
   const persona = document.getElementById('rPersona').textContent;
   const analysis = document.getElementById('rAnalysis').textContent;
-  const text = `我的关系人格是 ${type}「${persona}」\n${analysis}\n\n快来测测你的 → ${location.href}`;
+  const text = `我的关系人格是 ${type}「${persona}」\n${analysis}\n\n—— 来自「什么值得买」MBTI 人格测试，测完领专属好价\n快来测测你的 → ${location.href}`;
   if(navigator.clipboard){
     navigator.clipboard.writeText(text).then(()=>toast('已复制，快去分享吧 🎉'));
   } else {
