@@ -129,6 +129,7 @@ const PERSONALITIES = {
   INTJ: {
     persona: '战略型闷骚',
     analysis: '亲密如下棋，色色像实验，冷感但精准。',
+    typeTip: '这类人格偏爱科技感好物',
     product: '金属的冰冷，准确的操作，惹火的氛围',
     link: 'https://item.jd.com/10160781623061.html',
     tags: ['精准', '冷感', '高效'],
@@ -139,6 +140,7 @@ const PERSONALITIES = {
   INTP: {
     persona: '理论派懒虫',
     analysis: '脑补满分，实操关机——查完文献就累了。',
+    typeTip: '这类人格偏爱高智感设计',
     product: 'AI影音识别大模型+突破视界影音随动+尺寸自适应通道，精准手游快感',
     link: 'https://item.jd.com/100245029815.html',
     tags: ['脑补王', '懒得动', '研究员'],
@@ -149,6 +151,7 @@ const PERSONALITIES = {
   ENTJ: {
     persona: '霸道指挥官',
     analysis: '亲密要KPI，色色冲业绩，不服来战。',
+    typeTip: '这类人格偏爱掌控感强的好物',
     product: '时间不是问题，腰力久经考验',
     link: 'https://item.jd.com/100278426962.html',
     tags: ['掌控欲', '高效率', '不服来战'],
@@ -159,6 +162,7 @@ const PERSONALITIES = {
   ENTP: {
     persona: '辩论老司机',
     analysis: '撩你是为论证，花样多为防腻，嘴强王者。',
+    typeTip: '这类人格偏爱猎奇新奇特',
     product: '最能说话的ta，此刻静音',
     link: 'https://item.jd.com/100113137431.html',
     tags: ['嘴强王者', '花样多', '防腻专家'],
@@ -169,6 +173,7 @@ const PERSONALITIES = {
   INFJ: {
     persona: '神秘诱惑者',
     analysis: '灵魂共鸣才开门，不行就拉黑，傲娇天花板。',
+    typeTip: '这类人格偏爱氛围感好物',
     product: '傲娇猫娘，考验耐力的交付',
     link: 'https://detail.tmall.com/item.htm?id=733386891054',
     tags: ['傲娇', '灵魂共鸣', '神秘感'],
@@ -179,6 +184,7 @@ const PERSONALITIES = {
   INFP: {
     persona: '纯爱小哭包',
     analysis: '先写情诗再抱抱，色色看月亮心情。',
+    typeTip: '这类人格偏爱浪漫系好物',
     product: '怎么不是一种奖励呢？',
     link: 'https://item.jd.com/100153303919.html',
     tags: ['纯爱脑', '情绪化', '月亮心情'],
@@ -189,6 +195,7 @@ const PERSONALITIES = {
   ENFJ: {
     persona: '全民暖宝宝',
     analysis: '温柔到你窒息，床上也是教育片风格。',
+    typeTip: '这类人格偏爱温柔呵护系好物',
     product: '重组胶原蛋白×玻尿酸，医用级别，呵护每一寸感受',
     link: 'https://item.jd.com/100261990364.html',
     tags: ['温柔过头', '全员照顾', '教育系'],
@@ -199,6 +206,7 @@ const PERSONALITIES = {
   ENFP: {
     persona: '快乐小狗',
     analysis: '扑倒你然后拆家，新鲜感是唯一忠诚。',
+    typeTip: '这类人格偏爱高颜值好物',
     product: '新鲜感永动机，今天也要解锁新玩法',
     link: 'https://item.jd.com/100329216956.html',
     tags: ['新鲜感', '扑倒型', '拆家达人'],
@@ -209,6 +217,7 @@ const PERSONALITIES = {
   ISTJ: {
     persona: '规矩打工人',
     analysis: '亲密度按流程，色色排班表，拒绝意外。',
+    typeTip: '这类人格偏爱安全实用好物',
     product: '安全系数✅ 水感润滑✅ 防脱落微米附着专利✅ 亲密安全流程✅',
     link: 'https://item.jd.com/10147795248211.html',
     tags: ['按流程', '排班表', '拒绝意外'],
@@ -219,6 +228,7 @@ const PERSONALITIES = {
   ISFJ: {
     persona: '默默奉献妈',
     analysis: '你要啥我给啥，事后煮汤，别太野就行。',
+    typeTip: '这类人格偏爱体贴照顾好物',
     product: '医用同源，低敏超薄，水润柔滑',
     link: 'https://item.jd.com/100324457638.html',
     tags: ['无限付出', '低调照顾', '别太野'],
@@ -229,6 +239,7 @@ const PERSONALITIES = {
   ESTJ: {
     persona: '纪检委主任',
     analysis: '先签字后贴贴，色色要合规，否则扣年终。',
+    typeTip: '这类人格偏爱靠谱口碑好物',
     product: '爱可以谈，但不能高危，懂安全才能do',
     link: 'https://item.jd.com/100041522385.html',
     tags: ['先签字', '合规操作', '年终奖'],
@@ -239,6 +250,7 @@ const PERSONALITIES = {
   ESFJ: {
     persona: '社交女王',
     analysis: '朋友圈秀恩爱，床上求好评，请五星。',
+    typeTip: '这类人格偏爱社交分享好物',
     product: '我要验牌，亲密的牌，他的她的都能玩，认可感最重要',
     link: 'https://item.jd.com/100027019937.html',
     tags: ['秀恩爱', '求好评', '五星服务'],
@@ -249,6 +261,7 @@ const PERSONALITIES = {
   ISTP: {
     persona: '动手老工匠',
     analysis: '亲密不如修车，色色直接来，少废话。',
+    typeTip: '这类人格偏爱硬核实用好物',
     product: '开车得有润滑液，一滴润滑车速升级',
     link: 'https://item.jd.com/2388387.html',
     tags: ['直接来', '少废话', '动手派'],
@@ -259,6 +272,7 @@ const PERSONALITIES = {
   ISFP: {
     persona: '艺术小野猫',
     analysis: '灯光香薰不能少，色色到一半："等等，这个角度不美。"',
+    typeTip: '这类人格偏爱美学金属好物',
     product: '香气如镜，照见欲望的彼此，美的当下',
     link: 'https://item.jd.com/10154484489875.html',
     tags: ['美学至上', '香薰控', '角度党'],
@@ -269,6 +283,7 @@ const PERSONALITIES = {
   ESTP: {
     persona: '冒险王',
     analysis: '撩完就跑，色色如蹦极，刺激就完事。',
+    typeTip: '这类人格偏爱户外探险好物',
     product: '出街小神器，无人知晓的超快乐',
     link: 'https://item.jd.com/100105588045.html',
     tags: ['撩完就跑', '蹦极式', '刺激优先'],
@@ -279,6 +294,7 @@ const PERSONALITIES = {
   ESFP: {
     persona: '派对动物',
     analysis: '你负责嗨，我负责让全世界都知道咱俩嗨了。',
+    typeTip: '这类人格偏爱派对嗨玩好物',
     product: '爱就是一场永不散场的after party，可以加入两人对战的玩具，让一起更一起',
     link: 'https://item.jd.com/100329216956.html',
     tags: ['全场最嗨', 'after party', '一起更一起'],
