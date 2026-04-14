@@ -231,7 +231,6 @@ a{text-decoration:none;color:inherit}
 
     <div class="product-card">
       <div class="product-label">🛍️ 为你推荐</div>
-      <div class="product-type-tip" id="rTypeTip"></div>
       <div class="product-text" id="rProduct"></div>
       <a class="product-btn" id="rLink" href="#" target="_blank" rel="noopener">去什么值得买 App 搜同款好价 →</a>
       <div class="smzdm-tag">好价实时监控 · 什么值得买</div>
@@ -307,8 +306,6 @@ function showResult(){
   document.getElementById('rProduct').textContent = p.product;
   document.getElementById('rLink').href = p.link;
   document.getElementById('rTags').innerHTML = p.tags.map(t=>`<span class="tag">#${t}</span>`).join('');
-  document.getElementById('rTypeTip').textContent = p.typeTip || '';
-
   // 显示人格图片
   const imgEl = document.getElementById('rImg');
   if(p.image){ imgEl.src=p.image; imgEl.style.display='block'; } else { imgEl.style.display='none'; }
